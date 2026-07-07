@@ -1,0 +1,64 @@
+/* Purfolio widget helper styles — loaded in the Elementor editor AND
+   the frontend to keep border-radius / shape correct even when Elementor
+   resets image styles or when the active theme isn't Purfolio. */
+
+.pfw-hero .hero-art img,
+.pfw-hero-img { border-radius: 20px; }
+
+.pfw-projects .project { border-radius: 20px; overflow: hidden; }
+.pfw-projects .project img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pfw-services .card { border-radius: 20px; }
+.pfw-cta { border-radius: 32px; }
+.pfw-contact .contact-item { border-radius: 15px; }
+
+/* Editor-only fallbacks (when Purfolio theme isn't active) */
+.elementor .gradient-text{background:linear-gradient(90deg,#F45DCA,#B75AF1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.elementor .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-weight:600;text-decoration:none}
+.elementor .btn-primary{background:linear-gradient(90deg,#F45DCA,#B75AF1);color:#fff}
+.elementor .btn-ghost{border:1px solid rgba(255,255,255,.15);color:inherit}
+.elementor .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;backdrop-filter:blur(10px)}
+.elementor .site-header{display:block;visibility:visible;opacity:1}
+
+/* Fade-up animation for tools chips + timeline entries */
+@keyframes pfwFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.elementor-editor-active .pfw-fade-up,
+.elementor-editor-active .pfw-animate { opacity: 1; transform: none; }
+.pfw-fade-up,
+.pfw-animate { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.pfw-fade-up.in,
+.pfw-animate.in { opacity: 1; transform: translateY(0); }
+.pfw-tools .pfw-chip { transition: transform .2s ease, background .2s ease; cursor: default; }
+.pfw-tools .pfw-chip:hover { transform: translateY(-2px); background: rgba(255,255,255,.1) !important; }
+
+.pfw-tl { position: relative; margin-top: 48px; }
+.pfw-tl-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); opacity: .6; }
+.pfw-tl-row { display: grid; grid-template-columns: minmax(0,1fr) 40px minmax(0,1fr); align-items: start; gap: 16px; margin-bottom: 64px; }
+.pfw-tl-left .pfw-tl-card { text-align: right; }
+.pfw-tl-right .pfw-tl-card { text-align: left; }
+.pfw-tl-mid { display: flex; justify-content: center; padding-top: 24px; }
+.pfw-tl-dot { width: 14px; height: 14px; border-radius: 999px; }
+.pfw-tl-year { font-size: clamp(48px,6vw,72px); font-weight: 800; line-height: 1; }
+.pfw-tl-card h3 { margin: 4px 0 8px; font-size: 24px; }
+.pfw-tl-card p { opacity: .75; margin: 0; }
+
+.pfw-post-grid { display: grid; gap: 18px; }
+.pfw-post-grid-1 { grid-template-columns: 1fr; }
+.pfw-post-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pfw-post-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pfw-post-card { padding: 22px; border-radius: 20px; }
+.pfw-post-card h3 { margin: 8px 0; }
+@media (max-width: 1024px) {
+	.pfw-post-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+	.pfw-timeline .pfw-tl-rail { left: 20px; }
+	.pfw-timeline .pfw-tl-row { grid-template-columns: 40px minmax(0,1fr); }
+	.pfw-timeline .pfw-tl-row > div:first-child:empty,
+	.pfw-timeline .pfw-tl-row > div:last-child:empty { display: none; }
+	.pfw-timeline .pfw-tl-mid { grid-column: 1; grid-row: 1; }
+	.pfw-timeline .pfw-tl-card { grid-column: 2; }
+	.pfw-timeline .pfw-tl-card { text-align: left; }
+	.pfw-post-grid-2,
+	.pfw-post-grid-3 { grid-template-columns: 1fr; }
+}
