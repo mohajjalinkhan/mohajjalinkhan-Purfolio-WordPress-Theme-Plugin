@@ -6,7 +6,7 @@
 
 *Boldonse display · Inter body · glass-morphism cards · dark-first dark-mode.*
 
-`Theme v3.0.5` &nbsp;·&nbsp; `Plugin v2.0.5` &nbsp;·&nbsp; `GPL v2+`
+`Theme v3.0.5` &nbsp;·&nbsp; `Plugin v2.0.5` 
 
 </div>
 
@@ -216,18 +216,13 @@ A full developer guide (VSCode-style syntax-highlighted PDF) walks through build
 4. Open a pull request describing the change and any WP/Elementor versions tested.
 
 ---
-
-## 📄 License
-
-Released under the **GNU General Public License v2.0 or later**. You may fork, modify and redistribute freely under the same license.
-
 ---
 
 ## 🙌 Credits
 
 - **Author & Design:** Moahjjalin Khan
 - **Featured Persona:** Yousuf Zai — WordPress Developer
-- **Reference site:** https://mohajjalin.lovable.app
+- **Reference site:** https://mohajjalin.com
 - **Best-practice references:**
   - https://www.whitelabeliq.com/blog/custom-wordpress-theme-development-best-practices/
   - https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/
